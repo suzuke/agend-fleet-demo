@@ -23,6 +23,15 @@ def truncate(text: str, max_len: int, suffix: str = "...") -> str:
     return text[: max_len - len(suffix)] + suffix
 
 
+def is_palindrome(text: str) -> bool:
+    """Return True if text reads the same forwards and backwards.
+
+    Comparison ignores case and any non-alphanumeric characters.
+    """
+    cleaned = re.sub(r"[^a-z0-9]", "", text.lower())
+    return cleaned == cleaned[::-1]
+
+
 def camel_to_snake(name: str) -> str:
     """Convert CamelCase / camelCase to snake_case.
 
