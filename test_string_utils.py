@@ -33,3 +33,7 @@ def test_camel_to_snake_multiple_caps():
 
 def test_is_palindrome_ignores_case_and_punctuation():
     assert is_palindrome("A man, a plan, a canal: Panama") is True
+
+
+def test_is_palindrome_rejects_non_palindrome():
+    assert is_palindrome("hello world") is False
